@@ -1,0 +1,33 @@
+cd estate_planning_backend
+python manage.py startapp assets 
+python manage.py makemigrations
+python manage.py migrate
+python manage.py createsuperuser 
+docker-compose up --build 
+npx create-expo-app estate_planning_mobile
+cd estate_planning_mobile 
+npm install @react-navigation/native @react-navigation/native-stack
+npm install @reduxjs/toolkit react-redux
+npm install axios
+npm install native-base
+npx expo install react-native-safe-area-context react-native-svg
+npx expo install react-native-screens
+mkdir src
+cd src
+mkdir components screens redux services utils
+cd estate_planning_mobile
+npx expo start
+npx create-react-app estate-planning-web
+cd estate-planning-web
+npm install @mui/material @emotion/react @emotion/styled
+npm install @reduxjs/toolkit react-redux
+npm install axios
+npm install react-router-dom
+npm install recharts
+cd estate-planning-web
+npm start
+npm install @react-native-async-storage/async-storage
+npm install @react-native-community/datetimepicker
+python manage.py startapp wills
+python manage.py startapp education
+python manage.py startapp security
